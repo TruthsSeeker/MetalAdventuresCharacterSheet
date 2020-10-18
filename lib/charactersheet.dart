@@ -32,31 +32,55 @@ class _CharacterSheetState extends State<CharacterSheet> {
           icon: Icon(Icons.arrow_back_rounded),
           onPressed: () {},
         ),
-        actions: [IconButton(icon: Icon(Icons.edit), onPressed: () {})],
+        actions: [
+          IconButton(icon: Icon(Icons.account_box), onPressed: () {}),
+          IconButton(icon: Icon(Icons.edit), onPressed: () {}),
+        ],
         expandedHeight: kExpandedHeight,
         title: _showTitle ? Text('Lyra Bhaloobetee') : null,
         flexibleSpace: _showTitle
             ? null
             : Padding(
-              padding: EdgeInsets.all(40),
-                          child: FlexibleSpaceBar(
-                  
-                  // title: CharacterInfo(kExpandedHeight),
-                  background: CharacterInfo(kExpandedHeight)
-                ),
-            ),
+                padding: EdgeInsets.all(40),
+                child: FlexibleSpaceBar(
+
+                    // title: CharacterInfo(kExpandedHeight),
+                    background: CharacterInfo(kExpandedHeight)),
+              ),
         bottom: TabBar(tabs: [
           Tab(
-            text: "one",
+            child: FittedBox(
+              child: Text("Résumé"),
+            ),
           ),
           Tab(
-            text: "two",
+            child: FittedBox(
+              child: Text("Statistiques"),
+            ),
           ),
           Tab(
-            text: "three",
+            child: Column(
+              children: [
+                FittedBox(
+                  child: Text("Equipement"),
+                ),
+                FittedBox(
+                  child: Text("Compétences"),
+                ),
+              ],
+            ),
           ),
           Tab(
-            text: "four",
+            child: Column(
+              children: [
+                FittedBox(
+                  child: Text("Inventaire"),
+                ),
+                FittedBox(
+                  child: Text("Notes"),
+                ),
+              ],
+            ),
           ),
         ]),
       ),

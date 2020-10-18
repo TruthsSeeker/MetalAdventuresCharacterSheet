@@ -5,6 +5,8 @@ import 'package:MetalAdventuresCharacterSheet/models/origin.dart';
 import 'package:MetalAdventuresCharacterSheet/models/pools.dart';
 import 'package:flutter/material.dart';
 
+import 'ability.dart';
+
 class Player with ChangeNotifier {
   String _playerName = "";
   String _name = "";
@@ -26,6 +28,7 @@ class Player with ChangeNotifier {
   DateTime _creationDate;
   Inventory _inventory;
   List<Characteristic> _characteristics;
+  List<Ability> _abilities;
   Pools _pools;
 }
 
