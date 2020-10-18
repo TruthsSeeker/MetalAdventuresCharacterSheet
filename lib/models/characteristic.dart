@@ -7,11 +7,10 @@ class Characteristic with ChangeNotifier {
   final String domain;
   bool _mutation = false;
   bool _origin = false;
-  final List<Skill> skills;
+  List<Skill> _skills;
 
   Characteristic({
     this.name,
     this.domain,
-    this.skills,
   });
 }

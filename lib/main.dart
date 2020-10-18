@@ -1,3 +1,4 @@
+import 'package:MetalAdventuresCharacterSheet/charactersheet.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +12,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
-
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Container(
-        child: Text("Hello World"),
+      home: Scaffold(
+        body: SafeArea(
+          child: DefaultTabController(
+            initialIndex: 0,
+            length: 4,
+            child: CharacterSheet()
+          ),
+        ),
       ),
     );
   }
